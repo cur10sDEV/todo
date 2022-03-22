@@ -1,0 +1,55 @@
+.App {
+	padding: 20px 25px;
+	border: 2px green solid;
+	margin: 10px;
+	border-radius: 10px;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.btn {
+	font-size: 1rem;
+	padding: 8px 15px;
+	background: #000;
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	font-weight: bold;
+	cursor: pointer;
+	box-shadow: 2px 5px 5px rgba(200, 200, 200, 1.0), -2px -3px 5px rgba(200, 200, 200, 1.0);
+}
+
+.tasks {
+	margin: 1rem 0;
+}
+
+.task {
+	position: relative;
+	background: rgba(245, 245, 245, 1.0);
+	padding: 10px 15px;
+	margin-bottom: 1rem;
+	border: none;
+	border-radius: 5px;
+	box-shadow: -5px 5px 7px rgba(200, 200, 200, 1.0);
+}
+
+.task > h3, .task > h4 {
+	margin: 0;
+	margin-bottom: 5px;
+	padding: 0;
+	font-weight: normal;
+}
+
+.delete {
+	position: absolute;
+	top: 50%;
+	right: 2%;
+	transform: translate(-100%, -48%);
+	font-weight: bold;
+	color: red;
+	cursor: pointer;
+}
