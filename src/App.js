@@ -32,20 +32,12 @@ function App() {
       reminder: false
     }
   ]);
-  const [newTask, setNewTask] = useState({
-    id: (tasks.length + 1),
-    text: "",
-    day: "",
-    reminder: false
-  })
 
   // Add Task
-  const addNewTask = (e) => {
-    const field = e.target.id;
-    const value = e.target.value;
-    setNewTask({...newTask, field: value})
-    console.log(field, value)
-    console.log(newTask)
+  const addTask = (task) => {
+    console.log(task)
+    const newTask = {id: tasks.length + 1, ...task}
+    setTasks([...tasks, newTask])
   }
 
   // Delete Task
@@ -63,8 +55,7 @@ function App() {
     <div className="App">
       <Header />
       <AddTask 
-        newTask={newTask}
-        onChange={addNewTask}/>
+        addTask={addTask}/>
       {
         tasks.length > 0 ? <Tasks tasks={tasks} onClick={(e) => deleteTask(e.target.id)} onDoubleClick={toggleReminder} /> : "No Tasks Found"
       }
