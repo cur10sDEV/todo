@@ -42,6 +42,7 @@
 	margin-bottom: 5px;
 	padding: 0;
 	font-weight: normal;
+	cursor: pointer;
 }
 
 .delete {
@@ -52,4 +53,8 @@
 	font-weight: bold;
 	color: red;
 	cursor: pointer;
+}
+
+.reminder {
+	border-left: .3rem solid green;
 }
