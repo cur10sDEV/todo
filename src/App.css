@@ -1,14 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 .App {
+	font-family: "Poppins";
 	padding: 20px 25px;
 	border: 2px green solid;
 	margin: 10px;
 	border-radius: 10px;
 }
 
+/*Header Section*/
 .header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.header > h1 {
+	font-weight: 400;
 }
 
 .btn {
@@ -21,6 +29,46 @@
 	font-weight: bold;
 	cursor: pointer;
 	box-shadow: 2px 5px 5px rgba(200, 200, 200, 1.0), -2px -3px 5px rgba(200, 200, 200, 1.0);
+}
+
+/*Form Section*/
+.add-form {
+	background: rgba(245, 245, 245, 1.0);
+	padding: 1rem;
+	border-radius: 7px;
+	box-shadow: -5px 5px 7px rgba(200, 200, 200, 1.0);
+}
+
+.form-control {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1.25rem;
+	font-size: 1.25rem;
+}
+
+.form-control > input {
+	font-size: 1.1rem;
+	padding: 5px;
+	border: none;
+	border-radius: 5px;
+	margin-top: .5rem;
+}
+
+.form-control-check {
+	display: flex;
+	align-items: center;
+	font-size: 1.1rem;
+}
+
+.form-control-check > input {
+	width: 1.1rem;
+	height: 1.1rem;
+	margin-left: 1.5rem;
+}
+
+.btn-block {
+	margin: 2rem 0 1rem 0;
+	width: 100%;
 }
 
 .tasks {
@@ -38,11 +86,16 @@
 }
 
 .task > h3, .task > h4 {
+	width: 90%;
 	margin: 0;
 	margin-bottom: 5px;
 	padding: 0;
 	font-weight: normal;
 	cursor: pointer;
+}
+
+.task > h4 {
+	color: rgba(100, 100, 100, 1.0);
 }
 
 .delete {
@@ -57,4 +110,19 @@
 
 .reminder {
 	border-left: .3rem solid green;
+}
+
+.footer {
+	margin-top: 4rem;
+	text-align: center;
+}
+
+.footer > p {
+	margin: 0;
+	margin-bottom: .5rem;
+}
+
+.footer > p > a {
+	text-decoration: none;
+	color: blue;
 }

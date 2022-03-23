@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/Header'
 import Tasks from "./components/Tasks"
-import {useState, useEffect} from "react"
+import {useState} from "react"
 import AddTask from "./components/AddTask"
 import Footer from "./components/Footer"
 
@@ -10,25 +10,25 @@ function App() {
   const [tasks, setTasks] = useState([
     {
       id: 1,
-      text: "To remind of clothes",
-      day: "Today 6pm evening",
+      text: "Click Add to add Task",
+      day: "Today",
       reminder: true
     },
     {
       id: 2,
-      text: "To remind of shoes",
-      day: "Today 10pm night",
+      text: "Double Click on any task to set/unset reminder",
+      day: "Today",
       reminder: true
     },
     {
       id: 3,
-      text: "To remind of shaving",
-      day: "Tommorow 3pm afternoon",
+      text: "Click X do delete any task",
+      day: "Today",
       reminder: true
     },
     {
       id: 4,
-      text: "Code weather app",
+      text: "Thanks for Trying",
       day: "Every Day",
       reminder: false
     }
