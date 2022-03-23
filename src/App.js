@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Tasks from "./components/Tasks"
 import {useState, useEffect} from "react"
 import AddTask from "./components/AddTask"
+import Footer from "./components/Footer"
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
       reminder: false
     }
   ]);
+  const [showAddTask, setShowAddTask] = useState(false)
 
   // Add Task
   const addTask = (task) => {
@@ -53,12 +55,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <AddTask 
-        addTask={addTask}/>
+      <Header showAddTask={showAddTask} onClick={() => setShowAddTask(!showAddTask)}/>
+      { showAddTask && <AddTask addTask={addTask}/> }
       {
         tasks.length > 0 ? <Tasks tasks={tasks} onClick={(e) => deleteTask(e.target.id)} onDoubleClick={toggleReminder} /> : "No Tasks Found"
       }
+      <Footer />
     </div>
   );
 }
