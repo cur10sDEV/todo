@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header'
 import Tasks from "./components/Tasks"
 import {useState, useEffect} from "react"
+import AddTask from "./components/AddTask"
 
 function App() {
 
@@ -31,12 +32,21 @@ function App() {
       reminder: false
     }
   ]);
-  const [newTask, SetNewTask] = useState({
+  const [newTask, setNewTask] = useState({
     id: (tasks.length + 1),
     text: "",
     day: "",
     reminder: false
   })
+
+  // Add Task
+  const addNewTask = (e) => {
+    const field = e.target.id;
+    const value = e.target.value;
+    setNewTask({...newTask, field: value})
+    console.log(field, value)
+    console.log(newTask)
+  }
 
   // Delete Task
   const deleteTask = (id) => {
@@ -52,6 +62,9 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <AddTask 
+        newTask={newTask}
+        onChange={addNewTask}/>
       {
         tasks.length > 0 ? <Tasks tasks={tasks} onClick={(e) => deleteTask(e.target.id)} onDoubleClick={toggleReminder} /> : "No Tasks Found"
       }
